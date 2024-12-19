@@ -2,22 +2,71 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-/* body {
+body {
+  background-color: cornflowerblue;
+}
+
+header {
   display: flex;
   justify-content: center;
-} */
+}
+
+#reset-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 200px;
+  height: 80px;
+  font-size: 40px;
+}
 
 .item-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  border: solid black;
+  background-color: lightgrey;
+  align-items: center;
+  border-radius: 5px;
 }
 
 .upgrade-item {
   margin: 5px;
 }
 
+.upgrade-increase {
+  font-size: 14px;
+}
+
 .buy-button {
   margin: 5px;
+  width: 100px;
+  height: 30px;
+}
+
+button:hover {
+  background-color: darkgrey;
+}
+
+#img-container {
+  display: flex;
+  justify-content: center;
+}
+
+#current-pps {
+  position: absolute;
+  top: 80px;
+  left: 15px;
+}
+
+#total-pats {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+#total-pat-counter {
+  font-size: 50px;
 }

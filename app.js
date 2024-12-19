@@ -1,7 +1,7 @@
 // console.log("test");
 let gameData = {
   pats: 0,
-  patsPerSecond: 1,
+  patsPerSecond: 0,
 };
 
 function add(a, b) {
@@ -17,17 +17,29 @@ console.log(gameData);
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
   gameData.pats = 0;
-  gameData.patsPerSecond = 1;
+  gameData.patsPerSecond = 0;
+});
+
+const dogClicker = document.getElementById("dogclicker");
+dogClicker.addEventListener("click", function () {
+  gameData.pats = gameData.pats + 1;
 });
 
 const totalPatContainer = document.getElementById("total-pats");
 let totalPatCounter = document.createElement("h2");
+totalPatCounter.id = "total-pat-counter";
 totalPatContainer.appendChild(totalPatCounter);
+
+const patPerSecondContainer = document.getElementById("current-pps");
+let ppsCounter = document.createElement("h3");
+ppsCounter.id = "pps-counter";
+patPerSecondContainer.appendChild(ppsCounter);
 
 setInterval(function () {
   gameData.pats = add(gameData.pats, gameData.patsPerSecond);
   // console.log(gameData.pats);
   totalPatCounter.textContent = `Total Pats: ${gameData.pats}`;
+  ppsCounter.textContent = `PPS (Pats per Second: ${gameData.patsPerSecond})`;
   localStorage.setItem("Pat Data", JSON.stringify(gameData));
 }, 1000);
 
@@ -48,7 +60,7 @@ async function getUpgrades() {
 
   //editing the API's name data
   shopItems[0][0].name = "Auto-Patter";
-  shopItems[0][1].name = "Enhanced Pat";
+  shopItems[0][1].name = "Enhanced Auto-Pat";
   shopItems[0][2].name = "Pat Farm";
   shopItems[0][3].name = "Robot Patter";
   shopItems[0][4].name = "Pat Factory";
@@ -69,6 +81,11 @@ async function getUpgrades() {
       const upgradeItem = document.createElement("h4");
       upgradeItem.textContent = `${shopItems[0][i].name}`;
       upgradeItem.className = "upgrade-item";
+
+      const upgradeIncrease = document.createElement("p");
+      upgradeIncrease.textContent = `+${shopItems[0][i].increase} pats per second`;
+      upgradeIncrease.className = "upgrade-increase";
+      itemContainer.appendChild(upgradeIncrease);
 
       const buyButton = document.createElement("button");
       buyButton.textContent = `Buy: ${shopItems[0][i].cost}`;
