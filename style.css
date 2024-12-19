@@ -8,3 +8,16 @@
   display: flex;
   justify-content: center;
 } */
+
+.item-container {
+  display: flex;
+  justify-content: center;
+}
+
+.upgrade-item {
+  margin: 5px;
+}
+
+.buy-button {
+  margin: 5px;
+}
