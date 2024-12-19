@@ -19,12 +19,26 @@ async function getUpgrades() {
   shopItems.push(jsonUpgrades);
   console.log(shopItems);
 
+  shopItems[0][0].name = "Auto-Patter";
+  shopItems[0][1].name = "Enhanced Pat";
+  shopItems[0][2].name = "Pat Farm";
+  shopItems[0][3].name = "Robot Patter";
+  shopItems[0][4].name = "Pat Factory";
+  shopItems[0][5].name = "Magic Pat";
+  shopItems[0][6].name = "Time Machine";
+  shopItems[0][7].name = "Quantum Pat";
+  shopItems[0][8].name = "Hand of Zeus";
+  shopItems[0][9].name = "Interdimensional Pat Machine";
+
   function renderUpgrades() {
     for (let i = 0; i < shopItems[0].length; i++) {
       console.log(i);
-      const upgradeItem = document.createElement("h3");
-      upgradeItem.textContent = shopItems[0][i].name;
+      const upgradeItem = document.createElement("h4");
+      upgradeItem.textContent = `${shopItems[0][i].name}`;
+      const buyButton = document.createElement("button");
+      buyButton.textContent = `Buy: ${shopItems[0][i].cost}`;
       shopBox.appendChild(upgradeItem);
+      shopBox.appendChild(buyButton);
     }
   }
   renderUpgrades();
