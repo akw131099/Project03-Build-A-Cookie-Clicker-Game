@@ -13,6 +13,12 @@ function subtract(a, b) {
 }
 
 gameData = JSON.parse(localStorage.getItem("Pat Data"));
+console.log(gameData);
+const resetButton = document.getElementById("reset-button");
+resetButton.addEventListener("click", function () {
+  gameData.pats = 0;
+  gameData.patsPerSecond = 1;
+});
 
 const totalPatContainer = document.getElementById("total-pats");
 let totalPatCounter = document.createElement("h2");
