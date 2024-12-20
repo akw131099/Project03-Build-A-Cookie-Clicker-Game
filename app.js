@@ -17,6 +17,7 @@ console.log(savedGameData);
 if (savedGameData !== null) {
   gameData = savedGameData;
 }
+// ^^ credit to Frankie and Craig for helping with this ^^
 
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
