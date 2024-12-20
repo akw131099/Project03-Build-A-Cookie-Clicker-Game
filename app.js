@@ -12,7 +12,7 @@ function subtract(a, b) {
   return a - b;
 }
 
-gameData = await JSON.parse(localStorage.getItem("Pat Data"));
+gameData = JSON.parse(localStorage.getItem("Pat Data"));
 console.log(gameData);
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
