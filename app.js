@@ -12,14 +12,12 @@ function subtract(a, b) {
   return a - b;
 }
 
-savedGameData = JSON.parse(localStorage.getItem("Pat Data"));
-console.log(gameData);
-if ((savedGameData = null)) {
-  let gameData = {
-    pats: 0,
-    patsPerSecond: 0,
-  };
+let savedGameData = JSON.parse(localStorage.getItem("Pat Data"));
+console.log(savedGameData);
+if (savedGameData !== null) {
+  gameData = savedGameData;
 }
+
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
   gameData.pats = 0;

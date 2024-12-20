@@ -72,4 +72,7 @@ button:hover {
 }
 
 @media (max-width: 375px) {
+  reset-button {
+    width: 10px;
+  }
 }
