@@ -70,7 +70,7 @@ async function getUpgrades() {
   shopItems[0][8].name = "Hand of Zeus";
   shopItems[0][9].name = "Interdimensional Pat Machine";
 
-  function renderUpgrades() {
+  async function renderUpgrades() {
     for (let i = 0; i < shopItems[0].length; i++) {
       console.log(i);
       const itemContainer = document.createElement("div");
@@ -90,7 +90,7 @@ async function getUpgrades() {
       const buyButton = document.createElement("button");
       buyButton.textContent = `Buy: ${shopItems[0][i].cost}`;
       buyButton.className = "buy-button";
-      buyButton.addEventListener("click", function () {
+      buyButton.addEventListener("click", async function () {
         if (gameData.pats < shopItems[0][i].cost) {
           alert("Not enough pats!");
         } else if (gameData.pats >= shopItems[0][i].cost) {
