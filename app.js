@@ -23,7 +23,6 @@ const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
   gameData.pats = 0;
   gameData.patsPerSecond = 0;
-  localStorage.clear();
 });
 
 const dogClicker = document.getElementById("dogclicker");
