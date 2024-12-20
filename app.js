@@ -12,12 +12,19 @@ function subtract(a, b) {
   return a - b;
 }
 
-gameData = JSON.parse(localStorage.getItem("Pat Data"));
+savedGameData = JSON.parse(localStorage.getItem("Pat Data"));
 console.log(gameData);
+if ((savedGameData = null)) {
+  let gameData = {
+    pats: 0,
+    patsPerSecond: 0,
+  };
+}
 const resetButton = document.getElementById("reset-button");
 resetButton.addEventListener("click", function () {
   gameData.pats = 0;
   gameData.patsPerSecond = 0;
+  localStorage.clear();
 });
 
 const dogClicker = document.getElementById("dogclicker");
@@ -70,7 +77,7 @@ async function getUpgrades() {
   shopItems[0][8].name = "Hand of Zeus";
   shopItems[0][9].name = "Interdimensional Pat Machine";
 
-  async function renderUpgrades() {
+  function renderUpgrades() {
     for (let i = 0; i < shopItems[0].length; i++) {
       console.log(i);
       const itemContainer = document.createElement("div");
